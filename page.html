@@ -1,143 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-<style>
-	#container {
-		margin: auto 25%;
-	}
-	.image-gallery {
-		/* Mobile first */
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
-	}
-
-	.image-gallery .column {
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
-	}
-
-	.image-item img {
-		width: 100%;
-		border-radius: 5px;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	.overlay {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		background: rgba(57, 57, 57, 0.502);
-		top: 0;
-		left: 0;
-		transform: scale(0);
-		transition: all 0.2s 0.1s ease-in-out;
-		color: #black;
-		border-radius: 5px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.image-gallery img:hover .overlay {
-		transform: scale(1);
-	}
-
-	@media only screen and (min-width: 768px) {
-		.image-gallery {
-			flex-direction: row;
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		#container {
+			margin: auto 25%;
 		}
-	}
-</style>
-<body>
-	<div id="container">
-		<div class="image-gallery">
-		  <div class="column">
-			<div class="image-item">
-				<a href="https://www.instagram.com/reel/CikbOiivNQh/" target="_blank">
-					<img src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/307141230_791726478813802_8873568124227024142_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=XPu9khlkMJoAX_ipkxX&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT84V-43jva3LahZDbl3cEpNcNaDQwjU3D55WTOw2PfkkQ&amp;oe=632BCEA8"/>
-				</a>
-			  <div class="overlay"><span>Image title</span></div>
+		.image-gallery {
+			/* Mobile first */
+			display       : flex;
+			flex-direction: column;
+			gap           : 10px;
+		}
+
+		.image-gallery .column {
+			display       : flex;
+			flex-direction: column;
+			gap           : 10px;
+		}
+
+		.image-item {
+			position: relative;
+			cursor  : pointer;
+		}
+
+		.image-item img {
+			width        : 100%;
+			border-radius: 5px;
+			height       : 100%;
+			object-fit   : cover;
+		}
+
+		.overlay {
+			position       : absolute;
+			width          : 100%;
+			height         : 100%;
+			background     : rgba(57, 57, 57, 0.502);
+			top            : 0;
+			left           : 0;
+			transform      : scale(0);
+			transition     : all 0.2s 0.1s ease-in-out;
+			color          : #fff;
+			display        : flex;
+			align-items    : center;
+			justify-content: center;
+		}
+
+		/* Mostra o Texto de Overlay */
+		.image-item:hover .overlay {
+			transform: scale(1);
+		}
+
+		@media only screen and (min-width: 768px) {
+			.image-gallery {
+				flex-direction: row;
+			}
+		}
+	</style>
+	<body>
+		<div id="container">
+			<div class="image-gallery">
+				<div class="column">
+					<div class="image-item">
+						<a
+							href="https://www.instagram.com/reel/CikbOiivNQh/"
+							target="_blank"
+						>
+							<img
+								src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/307141230_791726478813802_8873568124227024142_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=XPu9khlkMJoAX_ipkxX&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT84V-43jva3LahZDbl3cEpNcNaDQwjU3D55WTOw2PfkkQ&amp;oe=632BCEA8"
+							/>
+						</a>
+						<div class="overlay"><span>Image title</span></div>
+					</div>
+					<div class="image-item">
+						<a
+							href="https://www.instagram.com/reel/CidoEcYPGyu/"
+							target="_blank"
+						>
+							<img
+								src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/306392864_754002332565620_426474876701301724_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=WVSIaVZL0JsAX_w-zOY&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT-zS_0VKvCPJI7lvwo1hDv2vLkb_YLWfFD1hv3YiI6DHQ&amp;oe=632A587B"
+							/>
+						</a>
+						<div class="overlay"><span>Image title</span></div>
+					</div>
+					<div class="image-item">
+						<a href="https://www.instagram.com/p/CidlCq1sr2K/" target="_blank">
+							<img
+								src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/306371312_1263259124489949_8639777188608797883_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=hUJcFnd1B7IAX-53XQY&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT-tQua8pBhHSIdjuBHzxmQ6pRz8osfUVowV_6jNl4DVEw&amp;oe=632AD984"
+							/>
+						</a>
+						<div class="overlay"><span>Image title</span></div>
+					</div>
+					<div class="image-item">
+						<a
+							href="https://www.instagram.com/reel/CicjyfCMqJk/"
+							target="_blank"
+						>
+							<img
+								src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/306726752_3292176191060726_601132786980125550_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=fCqetMtueOUAX8oTp7n&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT_tNW__02RpOqY-NfEJWgIGBVgeT3R3lrxEuEpVTZIWhg&amp;oe=632B65D5"
+							/>
+						</a>
+						<div class="overlay"><span>Image title</span></div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="image-item">
+						<a
+							href="https://www.instagram.com/reel/CiSpwMwr5X5/"
+							target="_blank"
+						>
+							<img
+								src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/305669426_2635185236612506_5205151642583215647_n.jpg?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=KPopmLTc5e0AX87ZnBR&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT8ROfliYesvaAAAZ7rAsmIdeTapNHRMYIJbqlbickUDKQ&amp;oe=632B7B7A"
+							/>
+						</a>
+						<div class="overlay"><span>Image title</span></div>
+					</div>
+					<div class="image-item">
+						<a href="https://www.instagram.com/p/CiSo7_TsSW7/" target="_blank">
+							<img
+								src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/306138450_386999536937679_3493332719985175973_n.jpg?_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=LxLrdQr_z5QAX_FSpSg&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT_IVXADX-vr88Wsu8ZpJ3uktyymK-iScblB1pj-BstCEQ&amp;oe=632A158C"
+							/>
+						</a>
+						<div class="overlay"><span>Image title</span></div>
+					</div>
+					<div class="image-item">
+						<a
+							href="https://www.instagram.com/reel/CiSIL6FL6Eu/"
+							target="_blank"
+						>
+							<img
+								src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/287156273_597166125405759_5611559189255368139_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=G2PW401tGiEAX9oQzaM&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT_5Z6p96rAR4LgTJb-HtpL8UFNR6dOwHiB4gV5zH8LPsQ&amp;oe=632A4EB6"
+							/>
+						</a>
+						<div class="overlay"><span>Image title</span></div>
+					</div>
+					<div class="image-item">
+						<a
+							href="https://www.instagram.com/reel/CiQELlkOLl4/"
+							target="_blank"
+						>
+							<img
+								src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/305486098_747608866346774_560261933790744081_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=8jrtu9t85x4AX8IrkkY&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT_93NCWUixDBqH9IeuYLIllOiaTw0eNbJcoiGzpaWXAEw&amp;oe=632B8AB8"
+							/>
+						</a>
+						<div class="overlay"><span>Image title</span></div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="image-item">
+						<a
+							href="https://www.instagram.com/reel/CiNwjDnrfPS/"
+							target="_blank"
+						>
+							<img
+								src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/305286979_1267316757386933_9159284727570553839_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=7D-lXw5HfWkAX_ONFpZ&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT91QZDvfKQ10PdMJ3QXn-OGbdmJeOQdyClt04HC1EWiiw&amp;oe=632B13E7"
+							/>
+						</a>
+						<div class="overlay"><span>Image title</span></div>
+					</div>
+					<div class="image-item">
+						<a href="https://www.instagram.com/p/CiNwd2eMF22/" target="_blank">
+							<img
+								src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/306170458_124066613723006_2175148218370093965_n.jpg?_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=SQTCydTuJQUAX8A_9E4&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT_jar1TKekdlsAxCh-1zah4FXu1-kywC-BU3vnFe9L57Q&amp;oe=632A6EC6"
+							/>
+						</a>
+						<div class="overlay"><span>Image title</span></div>
+					</div>
+					<div class="image-item">
+						<a
+							href="https://www.instagram.com/reel/CiNtYLBs7ok/"
+							target="_blank"
+						>
+							<img
+								src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/305394656_162903999735708_4084310613426218177_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=bU3MedEhPy4AX-HUiKY&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT-cUBjY_kFvxEYEQSlfiuLsKQZrZTl3aIgjT7HprXMGCA&amp;oe=632AB82B"
+							/>
+						</a>
+						<div class="overlay"><span>Image title</span></div>
+					</div>
+					<div class="image-item">
+						<a
+							href="https://www.instagram.com/reel/CiINtO3OyNQ/"
+							target="_blank"
+						>
+							<img
+								src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/304838462_806076527250762_5192018650095836489_n.jpg?_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=ZAjutpSwAfQAX8ESCzU&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT8EOCKACfQdaIlVYEksJHAA-T-n6aNPFhdmYti5IieDlw&amp;oe=632A6695"
+							/>
+						</a>
+						<div class="overlay"><span>Image title</span></div>
+					</div>
+				</div>
 			</div>
-			<div class="image-item">
-				<a href="https://www.instagram.com/reel/CidoEcYPGyu/" target="_blank">
-					<img src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/306392864_754002332565620_426474876701301724_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=WVSIaVZL0JsAX_w-zOY&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT-zS_0VKvCPJI7lvwo1hDv2vLkb_YLWfFD1hv3YiI6DHQ&amp;oe=632A587B"/>
-				  </a>
-			  <div class="overlay"><span>Image title</span></div>
-			</div>
-			<div class="image-item">
-				<a href="https://www.instagram.com/p/CidlCq1sr2K/" target="_blank">
-					<img src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/306371312_1263259124489949_8639777188608797883_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=hUJcFnd1B7IAX-53XQY&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT-tQua8pBhHSIdjuBHzxmQ6pRz8osfUVowV_6jNl4DVEw&amp;oe=632AD984"/>
-				  </a>
-			  <div class="overlay"><span>Image title</span></div>
-			</div>
-			<div class="image-item">
-				<a href="https://www.instagram.com/reel/CicjyfCMqJk/" target="_blank">
-					<img src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/306726752_3292176191060726_601132786980125550_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=fCqetMtueOUAX8oTp7n&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT_tNW__02RpOqY-NfEJWgIGBVgeT3R3lrxEuEpVTZIWhg&amp;oe=632B65D5"/>
-				  </a>
-			  <div class="overlay"><span>Image title</span></div>
-			</div>
-		  </div>
-		  <div class="column">
-			<div class="image-item">
-				<a href="https://www.instagram.com/reel/CiSpwMwr5X5/" target="_blank">
-					<img src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/305669426_2635185236612506_5205151642583215647_n.jpg?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=KPopmLTc5e0AX87ZnBR&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT8ROfliYesvaAAAZ7rAsmIdeTapNHRMYIJbqlbickUDKQ&amp;oe=632B7B7A"/>
-				  </a>
-			  <div class="overlay"><span>Image title</span></div>
-			</div>
-			<div class="image-item">
-				<a href="https://www.instagram.com/p/CiSo7_TsSW7/" target="_blank">
-					<img src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/306138450_386999536937679_3493332719985175973_n.jpg?_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=LxLrdQr_z5QAX_FSpSg&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT_IVXADX-vr88Wsu8ZpJ3uktyymK-iScblB1pj-BstCEQ&amp;oe=632A158C"/>
-				  </a>
-			  <div class="overlay"><span>Image title</span></div>
-			</div>
-			<div class="image-item">
-				<a href="https://www.instagram.com/reel/CiSIL6FL6Eu/" target="_blank">
-					<img src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/287156273_597166125405759_5611559189255368139_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=G2PW401tGiEAX9oQzaM&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT_5Z6p96rAR4LgTJb-HtpL8UFNR6dOwHiB4gV5zH8LPsQ&amp;oe=632A4EB6"/>
-				  </a>
-			  <div class="overlay"><span>Image title</span></div>
-			</div>
-			<div class="image-item">
-				<a href="https://www.instagram.com/reel/CiQELlkOLl4/" target="_blank">
-					<img src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/305486098_747608866346774_560261933790744081_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=8jrtu9t85x4AX8IrkkY&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT_93NCWUixDBqH9IeuYLIllOiaTw0eNbJcoiGzpaWXAEw&amp;oe=632B8AB8"/>
-				  </a>
-			  <div class="overlay"><span>Image title</span></div>
-			</div>
-		  </div>
-		  <div class="column">
-			<div class="image-item">
-				<a href="https://www.instagram.com/reel/CiNwjDnrfPS/" target="_blank">
-					<img src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/305286979_1267316757386933_9159284727570553839_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=7D-lXw5HfWkAX_ONFpZ&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT91QZDvfKQ10PdMJ3QXn-OGbdmJeOQdyClt04HC1EWiiw&amp;oe=632B13E7"/>
-				  </a>
-			  <div class="overlay"><span>Image title</span></div>
-			</div>
-			<div class="image-item">
-				<a href="https://www.instagram.com/p/CiNwd2eMF22/" target="_blank">
-					<img src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/306170458_124066613723006_2175148218370093965_n.jpg?_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=SQTCydTuJQUAX8A_9E4&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT_jar1TKekdlsAxCh-1zah4FXu1-kywC-BU3vnFe9L57Q&amp;oe=632A6EC6"/>
-				  </a>
-			  <div class="overlay"><span>Image title</span></div>
-			</div>
-			<div class="image-item">
-				<a href="https://www.instagram.com/reel/CiNtYLBs7ok/" target="_blank">
-					<img src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/305394656_162903999735708_4084310613426218177_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=bU3MedEhPy4AX-HUiKY&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT-cUBjY_kFvxEYEQSlfiuLsKQZrZTl3aIgjT7HprXMGCA&amp;oe=632AB82B"/>
-				  </a>
-			  <div class="overlay"><span>Image title</span></div>
-			</div>
-			<div class="image-item">
-				<a href="https://www.instagram.com/reel/CiINtO3OyNQ/" target="_blank">
-					<img src="https://scontent-lis1-1.cdninstagram.com/v/t51.29350-15/304838462_806076527250762_5192018650095836489_n.jpg?_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=ZAjutpSwAfQAX8ESCzU&amp;_nc_ht=scontent-lis1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AT8EOCKACfQdaIlVYEksJHAA-T-n6aNPFhdmYti5IieDlw&amp;oe=632A6695"/>
-				  </a>
-			  <div class="overlay"><span>Image title</span></div>
-			</div>
-		  </div>
 		</div>
-	</div>
-</body>
+	</body>
 </html>
